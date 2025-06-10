@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #007bff; /* Lumo Chat Blue */
+    --accent-color: #28a745; /* Green for success/highlights */
+    --text-color-dark: #343a40;
+    --text-color-light: #6c757d;
+    --background-light: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --input-focus-border: #80bdff;
+    --font-family: 'Outfit', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-light) 0%, #e0e5ea 100%);
+    margin: 0;
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+.login-container {
+    background-color: var(--card-bg);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden; /* For any potential background patterns */
+}
+
+.logo-placeholder {
+    font-size: 2.8em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+    /* Optional: add a subtle gradient or shadow to the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    color: var(--text-color-dark);
+    margin-bottom: 35px;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: calc(100% - 24px); /* Adjust for padding and border */
+    padding: 14px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: var(--text-color-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 25px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .login-container {
+        margin: 20px;
+        padding: 35px 25px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .logo-placeholder {
+        font-size: 2.2em;
+    }
+}

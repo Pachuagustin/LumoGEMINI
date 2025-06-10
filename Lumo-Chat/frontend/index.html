@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumo Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">L</div>
+                <h2>Lumo Chat</h2>
+            </div>
+            <button class="new-chat-btn" id="openNewChatModalBtn"><i class="fas fa-plus"></i> Nuevo Chat</button>
+            <div class="conversations-list">
+                <div class="conversation-item active">
+                    <i class="fas fa-comment-alt"></i>
+                    <span>Dudas de Nómina</span>
+                    <div class="conversation-actions">
+                        <i class="fas fa-pen edit-icon"></i>
+                        <i class="fas fa-trash-alt delete-icon"></i>
+                    </div>
+                </div>
+                <div class="conversation-item">
+                    <i class="fas fa-comment-alt"></i>
+                    <span>Asistencia RRHH</span>
+                    <div class="conversation-actions">
+                        <i class="fas fa-pen edit-icon"></i>
+                        <i class="fas fa-trash-alt delete-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+                <button class="theme-toggle-btn"><i class="fas fa-moon"></i></button> <button class="feedback-btn"><i class="fas fa-lightbulb"></i></button> </div>
+        </aside>
+        <main class="chat-main">
+            <header class="chat-header">
+                <button class="toggle-sidebar-btn" id="headerMenuBtn"><i class="fas fa-bars"></i></button> <h1 id="currentChatTitle">Dudas de Nómina</h1>
+                <div class="notification-icon-container">
+                    <i class="fas fa-bell notification-icon" id="notificationBell"></i>
+                    <span class="notification-badge" id="notificationBadge">0</span>
+                </div>
+                 <div class="header-action-menu" id="headerActionMenu">
+                    <button class="menu-item"><i class="fas fa-tasks"></i> Mis Tareas</button>
+                    <button class="menu-item"><i class="fas fa-book"></i> Base de Conocimiento</button>
+                    <button class="menu-item"><i class="fas fa-chart-bar"></i> Crear Informe</button>
+                    <button class="menu-item" id="attachFileBtn"><i class="fas fa-paperclip"></i> Adjuntar Archivo</button>
+                    <input type="file" id="fileInput" style="display:none;">
+                    <button class="menu-item"><i class="fas fa-share-alt"></i> Compartir Chat</button>
+                    <button class="menu-item"><i class="fas fa-envelope"></i> Enviar por Mail</button>
+                    <button class="menu-item"><i class="fas fa-calendar-alt"></i> Crear Evento</button>
+                </div>
+            </header>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <p>¡Hola! Soy Lumo Chat, tu asistente inteligente. ¿En qué puedo ayudarte hoy?</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <textarea id="messageInput" placeholder="Escribe tu mensaje aquí..." rows="1"></textarea>
+                <button id="voiceInputBtn" class="voice-input-btn"><i class="fas fa-microphone"></i></button>
+                <button id="sendMessageBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <div id="newChatModal" class="modal">
+        <div class="modal-content">
+            <h2>Crear Nuevo Chat</h2>
+            <input type="text" id="newChatNameInput" placeholder="Nombre del nuevo chat" required>
+            <div class="modal-buttons">
+                <button id="createChatBtn" class="btn-primary">Crear</button>
+                <button id="cancelNewChatBtn" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notificationPanel" class="notification-panel">
+        <div class="notification-panel-header">
+            <h3>Notificaciones</h3>
+            <button id="closeNotificationPanelBtn" class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="notification-list" id="notificationList">
+            <div class="notification-item">
+                <i class="fas fa-info-circle"></i>
+                <span>Tu solicitud de materiales ha sido aprobada.</span>
+                <span class="notification-time">Hace 5 min</span>
+            </div>
+            <div class="notification-item">
+                <i class="fas fa-reply"></i>
+                <span>Nueva respuesta en "Dudas de RRHH".</span>
+                <span class="notification-time">Ayer</span>
+            </div>
+        </div>
+        <button id="clearAllNotificationsBtn" class="btn-clear-all">Borrar todas</button>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
